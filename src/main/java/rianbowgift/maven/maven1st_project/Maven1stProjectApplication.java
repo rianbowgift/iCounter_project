@@ -13,13 +13,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.http.HttpClient;
 import java.util.Iterator;
+import java.util.Scanner;
 
 
 @SpringBootApplication
 public class Maven1stProjectApplication {
 
     public static void main(String[] args) throws Exception {
-        //SpringApplication.run(Maven1stProjectApplication.class, args);
+        SpringApplication.run(Maven1stProjectApplication.class, args);
 //        String Address;
 //        URL url;
 //        BufferedReader br;
@@ -64,6 +65,8 @@ public class Maven1stProjectApplication {
 
 
 
+
+
         String SummonerName = "reimei";
         String Address;
         URL url;
@@ -72,7 +75,7 @@ public class Maven1stProjectApplication {
         HttpURLConnection conn;
         String protocol = "GET";
 
-        String api_key = "";
+        String api_key = "RGAPI-2cc0374f-4c93-47e5-9896-3bcb53653a3d";
         String puuid = "ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg";
         int start = 0;
         int end = 30;
@@ -91,7 +94,7 @@ public class Maven1stProjectApplication {
         //모든챔피언 정보( id와 이름 능력치 등)
         String Address6 = "https://ddragon.leagueoflegends.com/cdn/12.2.1/data/en_US/champion.json";
 
-        url = new URL(Address4);
+        url = new URL(Address);
         conn = (HttpURLConnection)url.openConnection();
         conn.setRequestMethod(protocol);
         br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
@@ -102,46 +105,46 @@ public class Maven1stProjectApplication {
         JSONParser jsonParser = new JSONParser();
 
 ////        // {로 받을때
-//        JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
-//       System.out.println(jsonObject);
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
+       System.out.println(jsonObject);
 
 
 //        // [ 로받을때
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(br);
+    //    JSONArray jsonArray = (JSONArray) jsonParser.parse(br);
 //        System.out.println(jsonArray);
 //        for(int i=0;i< jsonArray.size();i++){
 //            System.out.println(jsonArray.get(i));
 //        }
 
-        Object match_num = jsonArray.get(0);
-        //가저온 매치id를 바탕으로 경기 내용 분석
-        String Address5 = "https://asia.api.riotgames.com/lol/match/v5/matches/" + match_num +"?api_key=" + api_key;
-        url = new URL(Address5);
-        conn = (HttpURLConnection)url.openConnection();
-        conn.setRequestMethod(protocol);
-        br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
-        JSONParser jsonParser2 = new JSONParser();
-        JSONObject jsonObject = (JSONObject) jsonParser2.parse(br);
- //       System.out.println(jsonObject);
-
-        JSONParser jsonParser3= new JSONParser();
-        JSONObject jsonObject_info = (JSONObject)jsonObject.get("info");
-
-
-//        System.out.println(jsonObject_info.get("participants"));
-
-        JSONArray jsonArray_participants = (JSONArray) jsonObject_info.get("participants");
-        for(int i=0;i< jsonArray_participants.size();i++){
-            System.out.println(jsonArray_participants.get(i));
-            System.out.println();
-        }
-
-
-//        JSONObject jsonObject_participants = (JSONObject)jsonObject_info.get("participants");
-
-//        System.out.println(jsonObject_participants);
-
-        System.out.println();
+//        Object match_num = jsonArray.get(0);
+//        //가저온 매치id를 바탕으로 경기 내용 분석
+//        String Address5 = "https://asia.api.riotgames.com/lol/match/v5/matches/" + match_num +"?api_key=" + api_key;
+//        url = new URL(Address5);
+//        conn = (HttpURLConnection)url.openConnection();
+//        conn.setRequestMethod(protocol);
+//        br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+//        JSONParser jsonParser2 = new JSONParser();
+//        JSONObject jsonObject = (JSONObject) jsonParser2.parse(br);
+// //       System.out.println(jsonObject);
+//
+//        JSONParser jsonParser3= new JSONParser();
+//        JSONObject jsonObject_info = (JSONObject)jsonObject.get("info");
+//
+//
+////        System.out.println(jsonObject_info.get("participants"));
+//
+//        JSONArray jsonArray_participants = (JSONArray) jsonObject_info.get("participants");
+//        for(int i=0;i< jsonArray_participants.size();i++){
+//            System.out.println(jsonArray_participants.get(i));
+//            System.out.println();
+//        }
+//
+//
+////        JSONObject jsonObject_participants = (JSONObject)jsonObject_info.get("participants");
+//
+////        System.out.println(jsonObject_participants);
+//
+//        System.out.println();
 
 
 
