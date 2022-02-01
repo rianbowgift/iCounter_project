@@ -20,7 +20,7 @@ public class HomeController {
         //
         return "search";
     }
-
+    //DTO
     @PostMapping(value = "/search")
     public String create(SummonerDTO summonerDTO) {
         Member member = new Member();
