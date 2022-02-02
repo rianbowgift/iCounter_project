@@ -28,7 +28,6 @@ public class HomeController {
     @GetMapping("/")        //홈화면. 아이디를 입력받는다
     public String home(){
         String SummonerName = "reimei"; //입력받아다 친다
-        String api_key = "RGAPI-78611ba4-8d04-4f18-8c4e-35d2860132de"; //서버에 저장되있다 친다
         //
         return "search";
     }

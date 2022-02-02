@@ -37,7 +37,7 @@ public class SummonerService {
     public JSONObject Summoner(String name) throws IOException, ParseException {
         //미리 입력된 api와 사용자에게 입력받은 id를 조합하여 RESTAPI로 사용자의 정보를 가저온다.
         //이떄, json형식으로 받아오기때문에 dto파일에 저장한다
-        String api_key = "RGAPI-78611ba4-8d04-4f18-8c4e-35d2860132de";
+
         String Address = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ name + "?api_key=" + api_key;
         String protocol = "GET";
         URL url = new URL(Address);
