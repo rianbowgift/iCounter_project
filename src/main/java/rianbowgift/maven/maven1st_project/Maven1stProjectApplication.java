@@ -75,7 +75,7 @@ public class Maven1stProjectApplication {
         HttpURLConnection conn;
         String protocol = "GET";
 
-        String api_key = "RGAPI-78611ba4-8d04-4f18-8c4e-35d2860132de";
+        String api_key = "RGAPI-8d5f85bb-c178-4654-92e5-e1af41155fc6";
         String puuid = "ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg";
         int start = 0;
         int end = 30;

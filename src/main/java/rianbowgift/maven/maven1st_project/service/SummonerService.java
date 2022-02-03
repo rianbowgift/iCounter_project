@@ -1,5 +1,6 @@
 package rianbowgift.maven.maven1st_project.service;
 
+import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,6 +16,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+
 @Transactional
 public class SummonerService {
 
@@ -34,10 +37,11 @@ public class SummonerService {
 
 
 
-    public JSONObject Summoner(String name) throws IOException, ParseException {
+    public User Summoner(String name) throws IOException, ParseException {
         //미리 입력된 api와 사용자에게 입력받은 id를 조합하여 RESTAPI로 사용자의 정보를 가저온다.
         //이떄, json형식으로 받아오기때문에 dto파일에 저장한다
-
+        System.out.println("id = " + name);
+        String api_key = "RGAPI-8d5f85bb-c178-4654-92e5-e1af41155fc6";
         String Address = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ name + "?api_key=" + api_key;
         String protocol = "GET";
         URL url = new URL(Address);
@@ -48,7 +52,12 @@ public class SummonerService {
         JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
         System.out.println(jsonObject);
 
-        return jsonObject;
+        Gson gson = new Gson();
+        User vo = gson.fromJson(jsonObject.toString(), User.class);
+        return vo;
     }
+
+
+
 
 }
