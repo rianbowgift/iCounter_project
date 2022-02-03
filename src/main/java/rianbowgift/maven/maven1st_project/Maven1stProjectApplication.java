@@ -67,46 +67,46 @@ public class Maven1stProjectApplication {
 
 
 
-        String SummonerName = "reimei";
-        String Address;
-        URL url;
-        BufferedReader br;
-        String br2 = "";
-        HttpURLConnection conn;
-        String protocol = "GET";
-
-        String api_key = "RGAPI-8d5f85bb-c178-4654-92e5-e1af41155fc6";
-        String puuid = "ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg";
-        int start = 0;
-        int end = 30;
-        //소환사 정보 가저오기,accountId puuid id 등
-        Address = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ SummonerName + "?api_key=" + api_key;
-
-        //로테이션 정보 가저오기 챔피언id
-        String Address2 = "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=" + api_key;
-
-        //소환사 숙련도레벨, 숙련도포인트점수, 챔피언 플레이시간 가저오기
-        String Address3 = "https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/c7lwgwuf4my_-k31xpjlVMLTbO2RhrqaGSxWfS7Xx4_xCQ?api_key=" + api_key;
-
-        // 최근 매칭 정보 가저오기(매칭번호만 가저온다. puuid,index,index(max)를 입력한다. 반드시 address5와 연동되야한다
-        String Address4 = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg/ids?start=0&count=30&api_key=" + api_key;
-
-        //모든챔피언 정보( id와 이름 능력치 등)
-        String Address6 = "https://ddragon.leagueoflegends.com/cdn/12.2.1/data/en_US/champion.json";
-
-        url = new URL(Address);
-        conn = (HttpURLConnection)url.openConnection();
-        conn.setRequestMethod(protocol);
-        br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
-
-
-
-
-        JSONParser jsonParser = new JSONParser();
-
-////        // {로 받을때
-        JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
-       System.out.println(jsonObject);
+//        String SummonerName = "reimei";
+//        String Address;
+//        URL url;
+//        BufferedReader br;
+//        String br2 = "";
+//        HttpURLConnection conn;
+//        String protocol = "GET";
+//
+//        String api_key = "RGAPI-8d5f85bb-c178-4654-92e5-e1af41155fc6";
+//        String puuid = "ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg";
+//        int start = 0;
+//        int end = 30;
+//        //소환사 정보 가저오기,accountId puuid id 등
+//        Address = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ SummonerName + "?api_key=" + api_key;
+//
+//        //로테이션 정보 가저오기 챔피언id
+//        String Address2 = "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=" + api_key;
+//
+//        //소환사 숙련도레벨, 숙련도포인트점수, 챔피언 플레이시간 가저오기
+//        String Address3 = "https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/c7lwgwuf4my_-k31xpjlVMLTbO2RhrqaGSxWfS7Xx4_xCQ?api_key=" + api_key;
+//
+//        // 최근 매칭 정보 가저오기(매칭번호만 가저온다. puuid,index,index(max)를 입력한다. 반드시 address5와 연동되야한다
+//        String Address4 = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/ykf_FrhmicM1ksVlrEcSDlz12jGJCk3n4dV59U6xfNZBN1iweL0YNDams1UFvU3XFLpjmgMCGFl3Qg/ids?start=0&count=30&api_key=" + api_key;
+//
+//        //모든챔피언 정보( id와 이름 능력치 등)
+//        String Address6 = "https://ddragon.leagueoflegends.com/cdn/12.2.1/data/en_US/champion.json";
+//
+//        url = new URL(Address);
+//        conn = (HttpURLConnection)url.openConnection();
+//        conn.setRequestMethod(protocol);
+//        br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+//
+//
+//
+//
+//        JSONParser jsonParser = new JSONParser();
+//
+//////        // {로 받을때
+//        JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
+//       System.out.println(jsonObject);
 
 
 //        // [ 로받을때

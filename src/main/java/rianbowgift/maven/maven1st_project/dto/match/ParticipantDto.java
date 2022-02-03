@@ -115,4 +115,5 @@ public class ParticipantDto {
     private int wardsPlaced;
     private boolean win;
 
+
 }
