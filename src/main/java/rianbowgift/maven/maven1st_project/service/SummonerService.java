@@ -67,7 +67,7 @@ public class SummonerService {
 
     public JSONArray MatchId_Call(String id) throws IOException, ParseException {
 
-        String Address = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + id + "/ids?start=0&count=10&api_key=" + api_key;
+        String Address = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + id + "/ids?start=0&count=15&api_key=" + api_key;
         String protocol = "GET";
         URL url = new URL(Address);
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -111,7 +111,7 @@ public class SummonerService {
                 String name = vo.getInfo().getParticipants()[j].getChampionName();
 
                 int[][] temp_nums= champions.get(name);
-                System.out.println(temp_nums + " " + temp_nums[0][0] + " " + temp_nums[0][1]);
+                //System.out.println(temp_nums + " " + temp_nums[0][0] + " " + temp_nums[0][1]);
 
                 //int[][] a = champions.get(name).clone();
 
@@ -157,12 +157,21 @@ public class SummonerService {
             }
         }
 
-        // 맵 데이터를 나온횟수 순으로 정렬하여 출력
-        for(int i=0;i<champions_real.size();i++){
-            for(int j=0; j<champions_real.size();j++){
+        Iterator<String> keys2 = champions_real.keySet().iterator();
 
-            }
+        while (keys2.hasNext()) {
+            String key = keys2.next();
+            System.out.println("챔피언 : " + key + " 만난횟수 : " + (int)champions_real.get(key)[0] + " 승률 : " + champions_real.get(key)[1]);
         }
+
+
+
+//        // 맵 데이터를 나온횟수 순으로 정렬하여 출력
+//        for(int i=0;i<champions_real.size();i++){
+//            for(int j=0; j<champions_real.size();j++){
+//
+//            }
+//        }
 
 
     }
