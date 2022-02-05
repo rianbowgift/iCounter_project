@@ -83,7 +83,7 @@ public class SummonerService {
         return jsonArray;
     }
 
-    public void MatchData(JSONArray array) throws IOException, ParseException {
+    public Map<String,double[]> MatchData(JSONArray array) throws IOException, ParseException {
 
         Map<String,int[][]> champions =  ChampionData();        //시작전에 챔피언관련 map을 받아온다
 
@@ -131,13 +131,13 @@ public class SummonerService {
 
         }
 
-        Statistics(champions);   //30판에대한 데이터통계 전송
+        return Statistics(champions);   //30판에대한 데이터통계 전송
 
 
     }
 
 
-    public void Statistics(Map Data){       //데이터 통계 처리
+    public Map<String, double[]> Statistics(Map Data){       //데이터 통계 처리
 
         // 실제 사용된 챔피언들만 뽑아서 key=챔피언 value=나온횟수,승률 방식의 map 데이터로 정리
         Iterator<String> keys = Data.keySet().iterator();
@@ -157,12 +157,15 @@ public class SummonerService {
             }
         }
 
+
         Iterator<String> keys2 = champions_real.keySet().iterator();
 
-        while (keys2.hasNext()) {
-            String key = keys2.next();
-            System.out.println("챔피언 : " + key + " 만난횟수 : " + (int)champions_real.get(key)[0] + " 승률 : " + champions_real.get(key)[1]);
-        }
+        return champions_real;
+//        while (keys2.hasNext()) {
+//            String key = keys2.next();
+//            System.out.println("챔피언 : " + key + " 만난횟수 : " + (int)champions_real.get(key)[0] + " 승률 : " + champions_real.get(key)[1]);
+//
+//        }
 
 
 
