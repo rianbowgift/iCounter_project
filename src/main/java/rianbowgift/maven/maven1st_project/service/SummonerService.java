@@ -30,7 +30,7 @@ public class SummonerService {
 
 
     private final SummonerRepository summonerRepository;
-    String api_key = "_";
+    String api_key = "RGAPI-a0d83073-f856-4c38-bf36-0afbd5c41a9b";
 
     @Autowired
     public SummonerService(SummonerRepository summonerRepository) {
