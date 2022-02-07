@@ -30,7 +30,7 @@ public class SummonerService {
 
 
     private final SummonerRepository summonerRepository;
-    String api_key = "";
+    String api_key = "_";
 
     @Autowired
     public SummonerService(SummonerRepository summonerRepository) {
