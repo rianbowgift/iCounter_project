@@ -43,8 +43,9 @@ public class HomeController {
         User user = new User();
         user = summonerService.Summoner(id.getName());  //유저의 id로 유저 정보를 가저옴
         JSONArray arrays = summonerService.MatchId_Call(user.getPuuid());       //최근 30경기 데이터 json타입 array로 받아옴
-        Map<String,double[]> keys = summonerService.MatchData(arrays);      //받아온 array를 넘겨주고 서비스 내부에서 분석하여 결과를 받아온다
-        model.addAttribute("keys",keys);
+        summonerService.MatchData(arrays);
+        // Map<String,double[]> keys = summonerService.MatchData(arrays);      //받아온 array를 넘겨주고 서비스 내부에서 분석하여 결과를 받아온다
+        //model.addAttribute("keys",keys);
         return "user";
     }
 

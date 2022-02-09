@@ -30,7 +30,8 @@ public class SummonerService {
 
 
     private final SummonerRepository summonerRepository;
-    String api_key = "RGAPI-a0d83073-f856-4c38-bf36-0afbd5c41a9b";
+    //이곳에 API를 입력하여 사용
+    String api_key = "";
 
     @Autowired
     public SummonerService(SummonerRepository summonerRepository) {
@@ -160,13 +161,13 @@ public class SummonerService {
 
         Iterator<String> keys2 = champions_real.keySet().iterator();
 
-        return champions_real;
-//        while (keys2.hasNext()) {
-//            String key = keys2.next();
-//            System.out.println("챔피언 : " + key + " 만난횟수 : " + (int)champions_real.get(key)[0] + " 승률 : " + champions_real.get(key)[1]);
-//
-//        }
+        //return champions_real;
+        while (keys2.hasNext()) {
+            String key = keys2.next();
+            System.out.println("챔피언 : " + key + " 만난횟수 : " + (int)champions_real.get(key)[0] + " 승률 : " + champions_real.get(key)[1]);
 
+        }
+        return champions_real;
 
 
 //        // 맵 데이터를 나온횟수 순으로 정렬하여 출력
