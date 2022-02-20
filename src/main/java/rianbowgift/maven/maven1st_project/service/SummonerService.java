@@ -30,8 +30,9 @@ public class SummonerService {
 
 
     private final SummonerRepository summonerRepository;
-    //이곳에 API를 입력하여 사용
+    //이곳에 API를 입력하여 사용.
     String api_key = "";
+
 
     @Autowired
     public SummonerService(SummonerRepository summonerRepository) {
